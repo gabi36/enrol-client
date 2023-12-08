@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  app:
+    image: 'client-reputation-api:latest'
+    build:
+      context: .
+    container_name: client-reputation
+    ports:
+      - "8080:8080"

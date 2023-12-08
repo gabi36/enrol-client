@@ -1,0 +1,35 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                                       http://www.liquibase.org/xml/ns/dbchangelog-ext
+                                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!-- Added the entity Client -->
+    <changeSet id="20230201120000-1" author="user">
+        <createTable tableName="client">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="series" type="varchar(255)">
+            </column>
+            <column name="number" type="int">
+            </column>
+            <column name="cnp" type="bigint">
+            </column>
+            <column name="first_name" type="varchar(255)">
+            </column>
+            <column name="last_name" type="varchar(255)">
+            </column>
+            <column name="nationality" type="varchar(255)">
+            </column>
+            <column name="birth_place" type="varchar(255)">
+            </column>
+            <column name="home" type="varchar(255)">
+            </column>
+            <column name="expiration_date" type="date">
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

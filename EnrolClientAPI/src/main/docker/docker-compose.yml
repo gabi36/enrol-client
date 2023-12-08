@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  app:
+    image: 'enrol-client-api:latest'
+    build:
+      context: .
+    container_name: enrol-client
+    ports:
+      - "8082:8082"
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:15432/CodeCrafters
+      - SPRING_DATASOURCE_USERNAME=core
+      - SPRING_DATASOURCE_PASSWORD=pass
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  db:
+    image: 'postgres:13.1-alpine'
+    container_name: db
+    ports:
+      - "15432:15432"
+    environment:
+      - POSTGRES_USER=core
+      - POSTGRES_PASSWORD=pass

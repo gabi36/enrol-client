@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  app:
+    image: 'client-existence-api:latest'
+    build:
+      context: .
+    container_name: client-existence
+    ports:
+      - "8081:8081"
